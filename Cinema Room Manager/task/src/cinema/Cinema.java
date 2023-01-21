@@ -130,10 +130,7 @@ public class Cinema {
         }
 
         public void showStatistics() {
-            System.out.println("Number of purchased tickets: " + statistics.ticketsBought);
-            System.out.printf("Percentage: %.2f%%%n", statistics.calculatePercentage());
-            System.out.println("Current income: $" + statistics.currentIncome);
-            System.out.println("Total income: $" + statistics.totalIncome);
+            statistics.showStatistics();
         }
 
         static class RoomStatistics {
@@ -148,6 +145,13 @@ public class Cinema {
                 this.totalIncome = totalIncome;
                 this.ticketsBought = 0;
                 this.currentIncome = 0;
+            }
+
+            public void showStatistics() {
+                System.out.println("Number of purchased tickets: " + ticketsBought);
+                System.out.printf("Percentage: %.2f%%%n", calculatePercentage());
+                System.out.println("Current income: $" + currentIncome);
+                System.out.println("Total income: $" + totalIncome);
             }
 
             public float calculatePercentage() {
